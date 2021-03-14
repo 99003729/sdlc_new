@@ -20,5 +20,3 @@ double Perimeter_Rectangle(double l,double w);
 void areaperimeter(void);
 
 #endif  /* #define __CALCULATOR_AREAPERIMETER_H__ */
-
-
