@@ -33,7 +33,7 @@ int main()
   RUN_TEST(test_subtract);
   RUN_TEST(test_multiply);
   RUN_TEST(test_divide);
-  RUN_TEST(test_correct_pin);
+  //RUN_TEST(test_correct_pin);
   RUN_TEST(test_convertions);
   RUN_TEST(test_AreaPerimeter);
 
@@ -76,14 +76,14 @@ void test_divide(void) {
   /* Dummy fail*/
   //TEST_ASSERT_EQUAL(3, divide(2, 2));
 }
-void test_correct_pin(void) {
-  TEST_ASSERT_EQUAL(0, correct_pin(1234));
+//void test_correct_pin(void) {
+  //TEST_ASSERT_EQUAL(0, correct_pin(1234));
   
   /* Dummy fail*/
   //TEST_ASSERT_EQUAL(1234, correct_pin(7878));
   /* Dummy fail*/
   //TEST_ASSERT_EQUAL(1, correct_pin(798678));
-}
+//}
 void test_convertions(void) 
 {
   TEST_ASSERT_EQUAL(472.441200, conversion(1,12));
