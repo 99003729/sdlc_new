@@ -86,7 +86,7 @@ void test_correct_pin(void) {
 }
 void test_convertions(void) 
 {
-  TEST_ASSERT_EQUAL(472.441, conversion(1,12));
+  TEST_ASSERT_EQUAL(472.441200, conversion(1,12));
   
   /* Dummy fail*/
   //TEST_ASSERT_EQUAL(111, conversion(1,2222));
@@ -97,9 +97,9 @@ void test_convertions(void)
 void test_AreaPerimeter(void)
 {
    //for choose operation
-  TEST_ASSERT_EQUAL(3.14, Area_Circle(1));
+  TEST_ASSERT_EQUAL(3.142000, Area_Circle(1));
   TEST_ASSERT_EQUAL(0, Perimeter_Square(0));
-  //TEST_ASSERT_EQUAL(Radius cannot be negative or zero, Area_Circle(1));
+  //TEST_ASSERT_EQUAL(0, Area_Square(-1));
   
  // TEST_ASSERT_EQUAL(152399025, Perimeter_Square(12345));
   //TEST_ASSERT_EQUAL(1, Perimeter_Square(1.0));
