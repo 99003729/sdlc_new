@@ -5,7 +5,7 @@
 #include <calculator_conversions.h>
 #include <calculator_AreaPerimeter.h>
 #include <calculator_pin.h>
-#define PROJECT_NAME    "TEAM2"
+#define PROJECT_NAME    "Calculator"
 
 /* Prototypes for all the test functions */
 void test_add(void);
@@ -77,7 +77,7 @@ void test_divide(void) {
   //TEST_ASSERT_EQUAL(3, divide(2, 2));
 }
 void test_correct_pin(void) {
-  TEST_ASSERT_EQUAL(0, correct_pin(1234));
+  TEST_ASSERT_EQUAL(1, correct_pin(1234));
   
   /* Dummy fail*/
   //TEST_ASSERT_EQUAL(1234, correct_pin(7878));
@@ -86,7 +86,7 @@ void test_correct_pin(void) {
 }
 void test_convertions(void) 
 {
-  TEST_ASSERT_EQUAL(472.441, conversion(1,12));
+  TEST_ASSERT_EQUAL(472.441200, conversion(1,12));
   
   /* Dummy fail*/
   //TEST_ASSERT_EQUAL(111, conversion(1,2222));
@@ -97,7 +97,7 @@ void test_convertions(void)
 void test_AreaPerimeter(void)
 {
    //for choose operation
-  TEST_ASSERT_EQUAL(3.14, Area_Circle(1));
+  TEST_ASSERT_EQUAL(3.142000, Area_Circle(1));
   TEST_ASSERT_EQUAL(0, Perimeter_Square(0));
   //TEST_ASSERT_EQUAL(0, Area_Square(-1));
   
