@@ -77,13 +77,13 @@ void test_divide(void) {
   //TEST_ASSERT_EQUAL(3, divide(2, 2));
 }
 void test_correct_pin(void) {
-  TEST_ASSERT_EQUAL(1, correct_pin(1234));
+  TEST_ASSERT_EQUAL(0, correct_pin(1234));
   
   /* Dummy fail*/
   //TEST_ASSERT_EQUAL(1234, correct_pin(7878));
   /* Dummy fail*/
   //TEST_ASSERT_EQUAL(1, correct_pin(798678));
-//}
+}
 void test_convertions(void) 
 {
   TEST_ASSERT_EQUAL(472.441200, conversion(1,12));
