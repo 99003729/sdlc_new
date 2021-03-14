@@ -3,54 +3,32 @@
 double Area_Circle(double radius)
 {
     double area_of_circle=0;
-    {
-        area_of_circle=PI*(radius*radius);
-        //printf("\narea of circle calculated");
-        return area_of_circle;
-    }
-        printf("\nEnter valid input!");
-
+    area_of_circle=PI*(radius*radius);
+    return area_of_circle;
 }
 
 double Area_Square(double side)
 {
     double area_of_square=0;
-    {
-        area_of_square=side*side;
-        //printf("\narea of square calculated\n");
-        return area_of_square;
-    }
-       
-
+    area_of_square=side*side;
+    return area_of_square;
 }
 
 double Perimeter_Square(double side)
 {
     double perimeter_of_square=0;
-  
-    {
-        perimeter_of_square=side*4;
-        //printf("\nperimeter of square calculated");
-        return perimeter_of_square;
-    }
-       
-
+    perimeter_of_square=side*4;
+    return perimeter_of_square;
 }
 
 double Perimeter_Rectangle(double l,double w)
 {
     double perimeter_of_rectangle=0;
-    
-    {
-        perimeter_of_rectangle=2*(l+w);
-        //printf("\nPerimeter of rectangle calculated");
-        return perimeter_of_rectangle;
-    }
-       
-
+    perimeter_of_rectangle=2*(l+w);
+    return perimeter_of_rectangle;
 }
 
-void areaperimeter(void)
+/*void areaperimeter(void)
 {
     int choice_operation=0;
     int choice_shape=0;
@@ -65,9 +43,7 @@ void areaperimeter(void)
     double length=0;
     double width=0;
 
-do
-{
-    printf("\nChoose the operation");
+   printf("\nChoose the operation");
     printf("\n1->Area \n2->Perimeter\n3->Exit");
     scanf("%d",&choice_operation);
 
@@ -177,6 +153,6 @@ do
 
         }
     }while(choice_operation!=3);
-}
+}*/
 
 
