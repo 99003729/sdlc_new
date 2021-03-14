@@ -5,7 +5,7 @@ double Area_Circle(double radius)
     double area_of_circle=0;
     {
         area_of_circle=PI*(radius*radius);
-        printf("\narea of circle calculated");
+        //printf("\narea of circle calculated");
         return area_of_circle;
     }
         printf("\nEnter valid input!");
@@ -17,7 +17,7 @@ double Area_Square(double side)
     double area_of_square=0;
     {
         area_of_square=side*side;
-        printf("\narea of square calculated");
+        //printf("\narea of square calculated\n");
         return area_of_square;
     }
        
@@ -30,7 +30,7 @@ double Perimeter_Square(double side)
   
     {
         perimeter_of_square=side*4;
-        printf("\nperimeter of square calculated");
+        //printf("\nperimeter of square calculated");
         return perimeter_of_square;
     }
        
@@ -43,7 +43,7 @@ double Perimeter_Rectangle(double l,double w)
     
     {
         perimeter_of_rectangle=2*(l+w);
-        printf("\nPerimeter of rectangle calculated");
+        //printf("\nPerimeter of rectangle calculated");
         return perimeter_of_rectangle;
     }
        

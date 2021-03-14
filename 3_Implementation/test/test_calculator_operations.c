@@ -5,7 +5,7 @@
 #include <calculator_conversions.h>
 #include <calculator_AreaPerimeter.h>
 #include <calculator_pin.h>
-#define PROJECT_NAME    "TEAM2"
+#define PROJECT_NAME    "Calculator"
 
 /* Prototypes for all the test functions */
 void test_add(void);
@@ -99,7 +99,7 @@ void test_AreaPerimeter(void)
    //for choose operation
   TEST_ASSERT_EQUAL(3.14, Area_Circle(1));
   TEST_ASSERT_EQUAL(0, Perimeter_Square(0));
-  TEST_ASSERT_EQUAL(Radius cannot be negative or zero, Area_Circle(1));
+  //TEST_ASSERT_EQUAL(Radius cannot be negative or zero, Area_Circle(1));
   
  // TEST_ASSERT_EQUAL(152399025, Perimeter_Square(12345));
   //TEST_ASSERT_EQUAL(1, Perimeter_Square(1.0));
