@@ -16,6 +16,18 @@ int calculator_operand2 = 0;
 int no_of_op = 0;
 int option_1;
 double metre_input;
+    int choice_operation=0;
+    int choice_shape=0;
+    float area_of_circle;
+    double Acircle=0;
+    double Asquare=0;
+    double Psquare=0;
+    double Prectangle=0;
+    double radius=0;
+    double side=0;
+
+    double length=0;
+    double width=0;
 
 /* Valid operations */
 enum operations{ ADD=1, SUBTRACT, MULTIPLY, DIVIDE, CONVERT,AREAPERIMETER, EXIT };
@@ -25,6 +37,159 @@ void calculator_menu(void);
 /* Verifies the requested operations validity */
 int valid_operation(int operation);
 
+int get_pin()
+{int saved_pin,new_pin;
+ FILE *fptr;
+   fptr = fopen("PIN.txt", "r");
+  
+  // display numbers
+  if((saved_pin = getw(fptr)) != EOF )     
+  {//saved_pin=getw(fptr);
+  fclose(fptr);
+  return saved_pin;}
+  else
+  update_pin();
+    // close connection  
+}
+
+void update_pin()
+{int new_pin;
+printf("Enter New PIN : ");
+scanf("%d",&new_pin);
+ FILE *fptr;
+     // creating a FILE variable
+  
+ 
+   
+  // open the file in write mode
+  fptr = fopen("PIN.txt", "w");
+  
+    
+  // enter integer numbers
+  
+  putw(new_pin, fptr);
+        
+  
+  // close connection
+  fclose(fptr);
+  correct_pin(new_pin);
+}
+
+void areaperimeter(void)
+{
+do
+{
+    printf("\nChoose the operation");
+    printf("\n1->Area \n2->Perimeter\n3->Exit");
+    scanf("%d",&choice_operation);
+
+        if(choice_operation==1)
+        {
+            printf("Choose the shape");
+            printf("\n1 -> Circle\n2 -> Square");
+            scanf("%d",&choice_shape);
+
+            while(choice_shape<3)
+            {
+                if(choice_shape==1)
+                {
+                    printf("\nEnter the radius of circle in cm");
+                    scanf("%lf",&radius);
+                    if(radius>0)
+                    {
+                        Acircle=Area_Circle(radius);
+                        printf("\nArea of circle = %lf",Acircle);
+                        break;
+                    }
+                    else
+                    {
+                        printf("\nRadius cannot be negative or zero");
+                        break;
+                    }
+
+                }
+                else if(choice_shape==2)
+                {
+                    printf("\nEnter the side of square in cm");
+                    scanf("%lf",&side);
+                    if(side>0)
+                    {
+                        Asquare=Area_Square(side);
+                        printf("\nArea of square = %lf",Asquare);
+                        break;
+                    }
+                    else
+                    {
+                         printf("\nSide cannot be negative or zero");
+                         break;
+                    }
+
+                }
+            }
+            
+
+        }
+
+        else if(choice_operation==2)
+        {
+            printf("Choose the shape");
+            printf("\n1 -> Square\n2 -> Rectangle");
+            scanf("%d",&choice_shape);
+            while(choice_shape<3)
+            {
+
+                if(choice_shape==1)
+                {
+                    printf("\nEnter the side of circle in cm");
+                    scanf("%lf",&side);
+                    if(side>0)
+                    {
+                        Psquare=Perimeter_Square(side);
+                        printf("\nPerimeter of square = %lf",Psquare);
+                        break;
+                    }
+                    else
+                    {
+                        printf("\nSide cannot be negative or zero");
+                        break;
+                    }
+
+                }
+                else if(choice_shape==2)
+                {
+                    printf("\nEnter the length of rectangle in cm");
+                    scanf("%lf",&length);
+                    if(length>0)
+                    {
+                        printf("\nEnter the width of rectangle in cm");
+                        scanf("%lf",&width);
+                        if(width>0)
+                        {
+                            Prectangle=Perimeter_Rectangle(length,width);
+                            printf("\nPerimeter of rectangle = %lf",Prectangle);
+                            break;
+                        }
+                        else
+                        {
+                            printf("\nWidth cannot be negative or zero");
+                            break;
+                        }
+
+                      }
+                      else
+                        {
+                            printf("\n length cannot be negative or zero");
+                            break;
+                        }
+
+                }
+            }
+            
+
+        }
+    }while(choice_operation!=3);
+}
+
 
 /* Start of the application */
 int main(int argc, char *argv[])
@@ -33,9 +198,8 @@ int main(int argc, char *argv[])
   last_pin=get_pin();//checking with the pin saved on file pin.txt
 printf("Enter PIN: ");
 scanf("%d",&entered_pin);
-    if(correct_pin(entered_pin)==1)
-    {
-    
+if(correct_pin(entered_pin)==1)
+{
     printf("\n****Calculator****\n");
     while(1)
     {
@@ -43,8 +207,10 @@ scanf("%d",&entered_pin);
     }
 }
 else
-    {printf("Wrong PIN \n");
-    }}
+    {
+        printf("Wrong PIN \n");
+    }
+}
 
 void calculator_menu(void)
 {
@@ -107,6 +273,7 @@ void calculator_menu(void)
     else if(AREAPERIMETER == calculator_operation)
     {
         printf("\nYou have selected Area and Perimeter option");
+        areaperimeter();
     }
     else
     {
