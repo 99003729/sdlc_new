@@ -109,6 +109,8 @@ do
                     else
                     {
                          printf("\nSide cannot be negative or zero");
+                         Asquare = 0;
+                         printf("\nArea of square = %lf",Asquare);
                          break;
                     }
 
