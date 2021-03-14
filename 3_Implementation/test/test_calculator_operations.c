@@ -99,7 +99,7 @@ void test_AreaPerimeter(void)
    //for choose operation
   TEST_ASSERT_EQUAL(3.14, Area_Circle(1));
   TEST_ASSERT_EQUAL(0, Perimeter_Square(0));
- // TEST_ASSERT_EQUAL(0, Perimeter_Square(-1));
+  TEST_ASSERT_EQUAL(0, Perimeter_Square(-1));
  // TEST_ASSERT_EQUAL(152399025, Perimeter_Square(12345));
   //TEST_ASSERT_EQUAL(1, Perimeter_Square(1.0));
   //TEST_ASSERT_EQUAL(6.6564, Perimeter_Square(2.58));
